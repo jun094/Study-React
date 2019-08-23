@@ -24,3 +24,5 @@ const items = [
     text : 'bye'
   }
 ]
+
+console.log(items.item[0]);
