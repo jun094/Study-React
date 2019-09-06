@@ -12,7 +12,6 @@ console.log(newArr);
 
 
 
-
 // 객체 배열에도 사용이 가능
 const items = [
   {

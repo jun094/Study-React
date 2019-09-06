@@ -10,3 +10,8 @@ superheroes.forEach(function(hero){
 superheroes.forEach((hero) => {
   console.log(hero);
 })
+
+
+$('.state').forEach(function(i){
+  console.log($('this').val() + "  ");
+})
