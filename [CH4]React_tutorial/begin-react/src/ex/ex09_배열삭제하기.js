@@ -19,20 +19,17 @@ function App() {
     {
       id: 1,
       username: 'velopert',
-      email: 'public.velopert@gmail.com',
-      active : true
+      email: 'public.velopert@gmail.com'
     },
     {
       id: 2,
       username: 'tester',
-      email: 'tester@example.com',
-      active : false
+      email: 'tester@example.com'
     },
     {
       id: 3,
       username: 'liz',
-      email: 'liz@example.com',
-      active : false
+      email: 'liz@example.com'
     }
   ]);
 
@@ -62,18 +59,6 @@ function App() {
     // 배열 삭제할때는 filter함수 사용 !
     // 설명은 es6문법 강의에 있음
   };
-
-
-  // 배열 수정하기 !!! (불변성 지키기)
-  const onToggle = id => {
-    setUsers(
-      users.map(user =>
-        user.id === id ? { ...user, active: !user.active } : user
-      )
-    );
-  };
-
-
   return (
     <>
       <CreateUser
@@ -82,17 +67,9 @@ function App() {
         onChange={onChange}
         onCreate={onCreate}
       />
-      <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
+      <UserList users={users} onRemove={onRemove} />
     </>
   );
 }
 
 export default App;
-
-
-/*
-정리============
-배열 삽입 : spread 함수
-배열 삭제 : filter함수
-배열 수정 : map 함수
-*/
