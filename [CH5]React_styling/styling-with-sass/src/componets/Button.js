@@ -6,11 +6,15 @@ import './Button.scss';
 //버튼을 3가지 버전으로 만들꺼임
 // size : large, medium, small
 // color : blue, pink, gray
-function Button({ children, size, color, outline, fullWidth }) {
+function Button({ children, size, color, outline, fullWidth, ...rest }) {
   return <button className={classNames('btn', size, color, {
-    outline,
-    fullWidth
-  })}>{children}</button>;
+                                        outline,
+                                        fullWidth
+                                      })
+                             } //classname end..
+                             {...rest}
+  >
+  {children}</button>;
                         //클래스name을 size와 함께 만듬 
                         // classNames라이브러리를 사용하여 size를 props로 받아 btn클래스를 문자열로 만들어 조건부 사용
                         // ex) btn medium, btn small --> 문자열!
