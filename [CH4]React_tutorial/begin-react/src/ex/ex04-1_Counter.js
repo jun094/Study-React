@@ -18,7 +18,7 @@ function Counter() {
     <div>
       <h1>{number}</h1>
       <button onClick={onIncrease}>+1</button> {/*자바스크립트와 달리 리액트는 onClick할때 대문자 !!!*/}
-      <button onClick={onDecrease}>-1</button> {/*HTML과 달리 리액트는 onDecrease() 괄호를 쓰지 않음를
+      <button onClick={onDecrease}>-1</button> {/*HTML과 달리 리액트는 onDecrease() 괄호를 쓰지 않음
                                                   렌더링될때 부르는게 아니므로 !! */}
     </div>
   );
