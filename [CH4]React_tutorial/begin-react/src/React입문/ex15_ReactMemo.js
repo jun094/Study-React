@@ -1,6 +1,6 @@
 import React, { useRef, useState, useMemo, useCallback } from 'react';
-import UserList from '../UserList';
-import CreateUser from '../CreateUser';
+import UserList from './UserList';
+import CreateUser from './CreateUser';
 
 // React.memo : 컴포넌트의 리렌더링 성능 최적화를 해줄 수 있음
 // CreaterUser.js, UserList.js에 export할 때 
