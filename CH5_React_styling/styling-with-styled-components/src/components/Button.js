@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { darken, lighten } from "polished";
 
-//비구조 할당
+//비구조 할당 - 색 지정
 const colorStyles = css`
   ${({ theme, color }) => {
     const selected = theme.palette[color];
@@ -29,6 +29,7 @@ const colorStyles = css`
   }}
 `;
 
+//비구조 할당 - 사이즈 지정
 const sizes = {
   large: {
     height: "3rem",
@@ -44,12 +45,26 @@ const sizes = {
   }
 };
 
-//비구조할당
+//비구조 할당 - 사이즈 지정
 const sizeStyles = css`
   ${({ size }) => css`
     height: ${sizes[size].height};
     font-size: ${sizes[size].fontSize};
   `}
+`;
+
+//비구조 할당 - fullwidth 지정
+const fullWidthStyle = css`
+  ${props =>
+    props.fullWidth &&
+    css`
+      width: 100%;
+      justify-content: center;
+      & + & {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    `}
 `;
 
 const StyledButton = styled.button`
@@ -64,21 +79,31 @@ const StyledButton = styled.button`
   padding-left: 1rem;
   padding-right: 1rem;
 
+  /* 버튼끼리 붙어있을 때 */
+  & + & {
+    margin-left: 1rem;
+  }
+
+  /* &+& 스타일을 덮어쓰기 위해 아래에 작성 */
   /* 크기 */
   ${sizeStyles}
 
   /* 색상 */
   ${colorStyles}
 
-  /* 기타 */
-  & + & {
-    margin-left: 1rem;
-  }
+  /* fullwidth */
+  ${fullWidthStyle}
 `;
 
-function Button({ children, color, outline, size, ...rest }) {
+function Button({ children, color, size, outline, fullWidth, ...rest }) {
   return (
-    <StyledButton color={color} size={size} outline={outline} {...rest}>
+    <StyledButton
+      color={color}
+      size={size}
+      outline={outline}
+      fullWidth={fullWidth}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );
