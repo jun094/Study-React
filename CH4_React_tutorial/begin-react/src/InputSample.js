@@ -7,12 +7,12 @@ import React, { useState } from "react";
 function InputSample() {
   //이번에는 useState 초기 값이 '단일값' 이 아니라 '객체'로 !!
   const [inputs, setInputs] = useState({
-    name: "",
+    number: "",
     nickname: ""
     // 현재 값 inputs 에 대한 key와 value들...
   });
 
-  const { name, nickname } = inputs; // 비구조화 할당을 통해 값 추출 ( 순서 중요 !!!!!)
+  const { number, nickname } = inputs; // 비구조화 할당을 통해 값 추출 ( 순서 중요 !!!!!)
 
   const onChange = e => {
     const { name, value } = e.target; // 비구조화 할당을 통해 값 추출
@@ -27,13 +27,18 @@ function InputSample() {
   };
   const onReset = () => {
     setInputs({
-      name: "",
+      number: "",
       nickname: ""
     });
   };
   return (
     <div>
-      <input name="name" placeholder="이름" onChange={onChange} value={name} />
+      <input
+        name="number"
+        placeholder="전화번호"
+        onChange={onChange}
+        value={number}
+      />
       <input
         name="nickname"
         placeholder="닉네임"
@@ -43,7 +48,7 @@ function InputSample() {
       <button onClick={onReset}> 초기화 </button>
       <div>
         <b>값: </b>
-        {name} ({nickname})
+        {number} ({nickname})
       </div>
     </div>
   );
