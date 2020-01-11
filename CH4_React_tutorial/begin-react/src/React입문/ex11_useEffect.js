@@ -20,19 +20,19 @@ function App() {
       id: 1,
       username: 'velopert',
       email: 'public.velopert@gmail.com',
-      active : true
+      active: true
     },
     {
       id: 2,
       username: 'tester',
       email: 'tester@example.com',
-      active : false
+      active: false
     },
     {
       id: 3,
       username: 'liz',
       email: 'liz@example.com',
-      active : false
+      active: false
     }
   ]);
 
@@ -76,7 +76,7 @@ function App() {
         onChange={onChange}
         onCreate={onCreate}
       />
-      <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
+      <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
     </>
   );
 }
