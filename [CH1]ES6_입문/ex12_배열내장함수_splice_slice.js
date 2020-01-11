@@ -1,3 +1,5 @@
+/** @format */
+
 // splice : 특정 index 부터 x개를 잘라서 가져감 !!!  ( 기존 배열 건들임  )
 const numbers = [10, 20, 30, 40];
 
@@ -6,7 +8,6 @@ const spliced = numbers.splice(index, 3); // index부터 3개 잘라냄
 
 console.log(spliced); // 잘라서 가져감
 console.log(numbers); // 잘려져 있음
-
 
 // slice(a,b) : a부터 b전 까지 잘라서 출력만 !!! ( 기존 배열 건들기 x )
 const numbers = [10, 20, 30, 40];
