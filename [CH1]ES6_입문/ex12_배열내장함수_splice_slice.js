@@ -6,6 +6,7 @@ const numbers = [10, 20, 30, 40];
 const index = numbers.indexOf(20); // 20의 index값을 가져옴
 const spliced = numbers.splice(index, 3); // index부터 3개 잘라냄
 
+console.log(index);
 console.log(spliced); // 잘라서 가져감
 console.log(numbers); // 잘려져 있음
 
