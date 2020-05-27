@@ -6,9 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './modules'; //파일명이 index.js이므로 이렇게만 불러도 자동으로 불려짐 !
+import { composeWithDevTools } from 'redux-devtools-extension'; // 리덕스 개발자 도구
 
 /**  스토어 만들기 **/
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 //console.log(store.getState());
 
 ReactDOM.render(

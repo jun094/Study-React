@@ -20,16 +20,26 @@ export const toggleTodo = (id) => ({
 // 리듀서의 초기 상태는 꼭 객체타입일 필요 없습니다.
 // 배열이여도 되고, 원시 타입 (숫자, 문자열, 불리언 이여도 상관 없습니다.
 const initialState = [
-    /* 우리는 다음과 같이 구성된 객체를 이 배열 안에 넣을 것입니다.
-  {
-    id: 1,
-    text: '예시',
-    done: false
-  } 
-  */
+    /* 우리는 다음과 같이 구성된 객체를 이 배열 안에 넣을 것입니다.*/
+    {
+        id: 1,
+        text: '예시',
+        done: false,
+    },
+    {
+        id: 2,
+        text: '예시2',
+        done: false,
+    },
+    {
+        id: 3,
+        text: '예시3',
+        done: false,
+    },
 ];
 
 export default function todos(state = initialState, action) {
+    //console.log(action.id);
     switch (action.type) {
         case ADD_TODO:
             return state.concat(action.todo);
